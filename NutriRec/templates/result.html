@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Chart</title>
+    <style>
+        /* General Reset and Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0fff0, #d9f9d9);
+            color: #333;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Headings */
+        h1, h2 {
+            color: #2a9d8f;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #888788;
+        }
+
+        /* Results Table Styling */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .results-table th, .results-table td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .results-table th {
+            background-color: #2a9d8f;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        .results-table tr:hover {
+            background-color: #e9f7ef;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #2a9d8f;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #21867a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .btn {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Chart</h1>
+        <h2>{{ name }}'s Daily Plan</h2> 
+        <!-- Diet Chart Table -->
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Meal</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Breakfast</strong></td>
+                    <td>{{ breakfast }}</td>
+                </tr>
+                {% if snack1 %}
+                <tr>
+                    <td><strong>Snack 1</strong></td>
+                    <td>{{ snack1 }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td><strong>Lunch</strong></td>
+                    <td>{{ lunch }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Snack 2</strong></td>
+                    <td>{{ snack2 }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Dinner</strong></td>
+                    <td>{{ dinner }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Snack 3</strong></td>
+                    <td>{{ snack3 }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="http://localhost:5173/doctors" class="btn">Nutrionists </a> 
+        <a href="{{ url_for('home') }}" class="btn">Home</a>    </div> 

@@ -1,0 +1,85 @@
+.blog-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of blog posts */
+    justify-content: space-around; /* Space between the items */
+    padding: 20px;
+}
+
+.blog-post {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ccc; /* Light border around posts */
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px; /* Space between posts */
+    padding: 20px;
+    width: calc(33% - 40px); /* Responsive width (3 posts per row), adjusting for margin */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center aligns the content inside each blog post */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.blog-post:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.blog-image {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    max-height: 300px; /* Limit the height of the images */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+h2 {
+    font-size: 1.8em; /* Increase heading size */
+    margin: 10px 0; /* Add some margin for spacing */
+    color: #2c3e50; /* Darker color for heading */
+    font-weight: bold; /* Make the heading bold */
+    text-align: center; /* Center the title */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+h2:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+p {
+    margin: 10px 0; /* Space out paragraphs */
+    text-align: center; /* Center the description */
+    color: #555; /* Softer text color for descriptions */
+}
+
+.read-more {
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button size */
+    border-radius: 5px; /* Rounded corners for button */
+    margin-top: 10px; /* Space between button and other content */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.read-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.category {
+    font-size: 0.9em; /* Slightly smaller font for category */
+    color: #888; /* Light gray for category text */
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        width: calc(50% - 40px); /* 2 posts per row for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-post {
+        width: 100%; /* Single column for mobile */
+    }
+}

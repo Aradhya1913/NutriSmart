@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="result.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" media="screen" href="{{url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>/* General Reset and Body Styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #f0fff0, #d9f9d9);
+        color: #333;
+    }
+    
+    /* Container Styling */
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    /* Headings */
+    h1, h2 {
+        color: #2a9d8f;
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+        font-weight: normal;
+    }
+    
+    /* Form Styling */
+    form.my-form {
+        width: 100%;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .form-control-label {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+    
+    /* Form Inputs */
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #2a9d8f;
+        outline: none;
+        box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+    }
+    
+    /* Error Handling */
+    .is-invalid {
+        border-color: #e63946;
+        background: #ffefef;
+    }
+    
+    .invalid-feedback {
+        color: #e63946;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    
+    /* Radio Buttons and Checkboxes */
+    .form-check {
+        margin: 10px 0;
+        text-align: left;
+    }
+    
+    .form-check-label {
+        font-size: 1em;
+        margin-left: 10px;
+    }
+    
+    .form-check-input {
+        accent-color: #2a9d8f;
+    }
+    
+    /* Submit Button */
+    .btn {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #2a9d8f;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+        background: #21867a;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+    
+        h1 {
+            font-size: 2em;
+        }
+    
+        h3 {
+            font-size: 1.5em;
+        }
+    
+        .form-control {
+            font-size: 0.9em;
+        }
+    
+        .btn {
+            font-size: 1em;
+        }
+    }</style>
+<body>
+    <div class="container">
+        {% block main %}  
+        <h1><center>Nutri-Smart</center></h1>
+  
+            <h2  style="color: #888788;"><center> Your personalized Artificially Intelligent Deitritian..!</center></h2>
+            <form action="" method="post" role="form" class="my-form">
+                {{ form.hidden_tag() }}
+                
+                <!-- Name Field -->
+                <div class="form-group">
+                    {{ form.name.label(class="form-control-label") }}
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-md is-invalid", maxlength="50", required=True) }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-md", maxlength="50", required=True) }}
+                    {% endif %}
+                </div>
+                
+                <!-- Weight Field -->
+                <div class="form-group">
+                    {{ form.weight.label(class="form-control-label") }}
+                    {% if form.weight.errors %}
+                        {{ form.weight(class="form-control form-control-md is-invalid", type="number", min="10", max="150", required=True) }}
+                        <div class="invalid-feedback">
+                            {% for error in form.weight.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.weight(class="form-control form-control-md", type="number", min="10", max="150", required=True) }}
+                    {% endif %}
+                </div>
+                
+                <!-- Height Field -->
+                <div class="form-group">
+                    {{ form.height.label(class="form-control-label") }}
+                    {% if form.height.errors %}
+                        {{ form.height(class="form-control form-control-md is-invalid", type="number", min="50", max="250", required=True) }}
+                        <div class="invalid-feedback">
+                            {% for error in form.height.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.height(class="form-control form-control-md", type="number", min="50", max="250", required=True) }}
+                    {% endif %}
+                </div>
+                
+                <!-- Age Field -->
+                <div class="form-group">
+                    {{ form.age.label(class="form-control-label") }}
+                    {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-md is-invalid", type="number", min="10", max="100", required=True) }}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-md", type="number", min="10", max="100", required=True) }}
+                    {% endif %}
+                </div>    
+                
+                <!-- Gender -->
+                {% for subfield in form.gender %}
+                    <div class="form-check">
+                        {{ subfield(class="form-check-input", required=True) }}
+                        {{ subfield.label(class="form-check-label") }}
+                    </div>    
+                {% endfor %}
+                
+                <!-- Physical Activity -->
+                <h4 style="margin-bottom:3px">Physical Activity</h4>
+                {% for subfield in form.physical_activity %}
+                    <div class="form-check">
+                        {{ subfield(class="form-check-input", required=True) }}
+                        {{ subfield.label(class="form-check-label") }}
+                    </div>    
+                {% endfor %}
+                
+                {{ form.submit(class="btn btn-success") }}                
+            </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

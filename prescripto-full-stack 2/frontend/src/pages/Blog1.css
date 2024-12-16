@@ -1,0 +1,71 @@
+/* Background for the entire page */
+.blog-page-container {
+    background-color: #1e1e1e; /* Light black background */
+    color: #f0f0f0; /* Light text color */
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Container for blog content */
+.blog-content {
+    max-width: 800px;
+    width: 100%;
+    background-color: #2a2a2a; /* Slightly lighter black for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the image */
+.blog-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Title and headings */
+.blog-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #28a745; /* Green for the title */
+    margin-bottom: 10px;
+}
+
+.blog-subheading {
+    font-size: 1.2rem;
+    color: #cccccc; /* Lighter text for subheading */
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #28a745; /* Green section titles */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Blog content text */
+.blog-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Link to go back to the blog list */
+.back-to-blog {
+    display: inline-block;
+    margin-top: 30px;
+    color: #28a745;
+    text-decoration: none;
+}
+
+.back-to-blog:hover {
+    text-decoration: underline;
+}
