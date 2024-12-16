@@ -62,7 +62,7 @@ const Home = () => {
   {/* Get Started Button */}
   <div className="relative container mx-auto text-center pb-12">
     <a 
-      href="http://127.0.0.1:5000" 
+      href="https://g6n2pqxj-5000.inc1.devtunnels.ms/" 
       className="bg-green-500 text-white py-3 px-6 rounded text-lg hover:bg-green-600 transition duration-300"
     >
       Get Started
